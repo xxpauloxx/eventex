@@ -42,7 +42,7 @@ class SubscribeTest(TestCase):
 class SubscribePostTest(TestCase):
 
 	def setUp(self):
-		data = dict(name='Henrique Bastos', cpf='12345678901', 
+		data = dict(name='Henrique Bastos', cpf='12345678901',
 				    email='henrique@bastos.net', phone='21-99618-6180')
 		self.response = self.client.post('/inscricao/', data)
 
@@ -56,7 +56,7 @@ class SubscribePostTest(TestCase):
 	def test_subscription_email_subject(self):
 		email = mail.outbox[0]
 		expect = 'Confirmação de inscrição'
-		
+
 		self.assertEqual(expect, email.subject)
 
 	def test_subscription_email_from(self):
@@ -99,3 +99,5 @@ class SubscribeInvalidPost(TestCase):
 	def test_form_has_errors(self):
 		form = self.response.context['form']
 		self.assertTrue(form.errors)
+
+		
