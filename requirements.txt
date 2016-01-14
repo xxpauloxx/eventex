@@ -1,0 +1,7 @@
+django==1.9
+python-decouple
+dj-database-url
+dj-static
+static3
+gunicorn
+psycopg2
