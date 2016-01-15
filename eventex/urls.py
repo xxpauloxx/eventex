@@ -18,7 +18,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from eventex.core.views import home
-from eventex.subscriptions.views import subscribe  
+from eventex.subscriptions.views import subscribe
 
 urlpatterns = [
 	url(r'^$', home),
