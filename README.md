@@ -29,7 +29,7 @@ python manage.py test
 1. Crie uma instância no heroku.
 2. Envie configurações para o heroku.
 3. Define uma SECRET_KEY segura na instância.
-4. Defina DEBUG=False
+4. Defina DEBUG=False.
 5. Configure o serviço de e-mail.
 6. Envie o código para o heroku.
 
