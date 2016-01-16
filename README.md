@@ -3,7 +3,6 @@
 Sistema de eventos encomendado pela Morena.
 
 [![Build Status](https://travis-ci.org/paulopinda/eventex.svg?branch=master)](https://travis-ci.org/paulopinda/eventex)
-
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/88b3ce008eb84c3f89c6a88bfb31d517)](https://www.codacy.com/app/paulo-pinda/eventex)
 
 ## Como desenvolver?
