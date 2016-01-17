@@ -4,6 +4,7 @@ __pycache__/
 .pyc
 .venv
 .wttd
+.ipynb_checkpoints/
 
 # C extensions
 *.so
