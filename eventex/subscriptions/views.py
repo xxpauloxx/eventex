@@ -10,7 +10,7 @@ from eventex.subscriptions.models import Subscription
 def subscribe(request):
 	if request.method == 'POST':
 		return create(request)
-	
+
 	return new(request)
 
 

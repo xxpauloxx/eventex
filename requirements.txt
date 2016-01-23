@@ -6,3 +6,4 @@ static3
 gunicorn
 psycopg2
 django-extensions
+pytz==2015.7

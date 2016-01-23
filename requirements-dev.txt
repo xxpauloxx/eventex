@@ -1,3 +1,4 @@
 -r requirements.txt
 ipython[notebook]
 django-test-without-migrations
+pytz==2015.7
