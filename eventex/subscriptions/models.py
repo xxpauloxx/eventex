@@ -6,6 +6,7 @@ class Subscription(models.Model):
 	email = models.EmailField('e-mail')
 	phone = models.CharField('telefone', max_length=255)
 	created_at = models.DateTimeField('criado em', auto_now_add=True)
+	paid = models.BooleanField('pago', default=False)
 
 	def __str__(self):
 		return self.name
