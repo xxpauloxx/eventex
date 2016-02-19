@@ -11,7 +11,6 @@ class SubscriptionModelAdminTest(TestCase):
 
 		self.model_admin = SubscriptionModelAdmin(Subscription, admin.site)
 
-
 	def test_has_action(self):
 		""" Action mark_as_paid should be installed """
 		self.assertIn('mark_as_paid', self.model_admin.actions)
