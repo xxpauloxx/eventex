@@ -1,10 +1,10 @@
 from django.db import models
 
 class Subscription(models.Model):
-	name = models.CharField('nome', max_length=100)
-	cpf = models.CharField('CPF', max_length=11)
+	name = models.CharField('nome', max_length=255)
+	cpf = models.CharField('CPF', max_length=255)
 	email = models.EmailField('e-mail')
-	phone = models.CharField('telefone', max_length=20)
+	phone = models.CharField('telefone', max_length=255)
 	created_at = models.DateTimeField('criado em', auto_now_add=True)
 
 	def __str__(self):
