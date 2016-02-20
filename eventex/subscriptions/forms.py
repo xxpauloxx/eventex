@@ -17,4 +17,9 @@ class SubscriptionForm(forms.Form):
 	email = forms.EmailField(label="E-mail")
 	phone = forms.CharField(label="Telefone")
 
+	def clean_name(self):
+		name = self.cleaned_data['name']
+		words = [w.capitalize() for w in name.split()]
+		return ' '.join(words)
+
 	
