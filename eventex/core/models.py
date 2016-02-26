@@ -2,7 +2,7 @@
 from django.db import models
 from django.shortcuts import resolve_url as r
 
-from eventex.core.managers import EmailContactManager, PhoneContactManager
+from eventex.core.managers import KindQuerySet, PeriodManager # KindContactManager, EmailContactManager, PhoneContactManager, 
 
 
 class Speaker(models.Model):
@@ -36,9 +36,12 @@ class Contact(models.Model):
 	kind = models.CharField('Tipo', max_length=1, choices=KINDS)
 	value = models.CharField('Valor', max_length=255)
 
-	objects = models.Manager()
-	emails = EmailContactManager()
-	phones = PhoneContactManager()
+	# objects = KindContactManager()
+	objects = KindQuerySet.as_manager()
+
+	# objects = models.Manager()
+	# emails = EmailContactManager()
+	# phones = PhoneContactManager()
 
 	class Meta:
 		verbose_name = 'contato'
@@ -53,6 +56,8 @@ class Talk(models.Model):
 	start = models.TimeField('Inicio', blank=True, null=True)
 	description = models.TextField('Descrição', blank=True)
 	speakers = models.ManyToManyField('Speaker', verbose_name='Palestrantes', blank=True)
+
+	objects = PeriodManager()
 
 	class Meta:
 		verbose_name = 'palestra'
