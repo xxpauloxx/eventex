@@ -37,12 +37,12 @@ class TalkListGet(TestCase):
 			(2, 'Título da Palestra'),
 			(1, '10:00'),
 			(1, '13:00'),
-			(3, '/palestrantes/henrique-bastos/'),
-			(3, 'Henrique Bastos'),
+			(4, '/palestrantes/henrique-bastos/'),
+			(4, 'Henrique Bastos'),
 			(2, 'Descrição da palestra.'),
-			(1, 'Título do Curso'),
-			(1, '09:00'),
-			(1, 'Descrição do curso.'),
+			(2, 'Título do Curso'),
+			(2, '09:00'),
+			(2, 'Descrição do curso.'),
 		]
 
 		for count, expected in contents:
@@ -50,7 +50,7 @@ class TalkListGet(TestCase):
 				self.assertContains(self.response, expected, count)
 
 	def test_context(self):
-		variables = ['morning_talks', 'afternoon_talks', 'courses']
+		variables = ['morning_talks', 'afternoon_talks']
 		
 		for key in variables:
 			with self.subTest():
