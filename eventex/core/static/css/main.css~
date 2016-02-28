@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'sinkin_sans600_semibold', serif;
 }
 
-h1 { padding: 10px 0 14px; }
+h1 { padding: 444px 0 30px; }
 
 h2 { padding: 23px 0 7px; }
 
@@ -345,48 +345,5 @@ section header h2 {
 
 }
 
-.alert {
-    padding: 0 15px;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-}
-
-.alert p {
-    padding: 7px 0 7px;
-}
-
-.alert.success {
-    color: #3c763d;
-    background-color: #dff0b8;
-    border-color: #d0e9c6;
-}
-
-.speakers h2 {
-    text-transform: uppercase;
-}
-
-.speakers img {
-    width: 200px;
-    border-radius: 100%;
-}
-
-.speakers img.photo {
-    float: left;
-    padding-right: 15px;
-}
-
-.talks h3 {
-    padding: 0;
-    min-height: 0;
-    color: #636363;
-}
-
-.talks h4 {
-    min-height: 1em;
-    font-size: 1em;
-    padding: 0;
-    margin: 0;
-}
 
 /* Fim Customização */

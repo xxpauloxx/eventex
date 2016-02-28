@@ -4,32 +4,31 @@ from eventex.subscriptions.models import Subscription
 
 
 class SubscriptionModelAdmin(admin.ModelAdmin):
-	date_hierarchy = 'created_at'
-	list_display = ('name', 'email', 'phone', 'cpf', 'created_at', 'subscribed_today', 'paid')
-	search_fields = ('name', 'email', 'phone', 'cpf', 'created_at')
-	list_filter = ('created_at', 'paid')
+    list_display = ('name', 'email', 'phone', 'cpf', 'created_at',
+                    'subscribed_today', 'paid')
+    date_hierarchy = 'created_at'
+    search_fields = ('name', 'email', 'phone', 'cpf', 'created_at')
+    list_filter = ('paid', 'created_at')
 
-	actions = ['mark_as_paid']
+    actions = ['mark_as_paid']
 
-	def subscribed_today(self, obj):
-		return obj.created_at == now().date()
+    def subscribed_today(self, obj):
+        return obj.created_at == now().date
 
-	subscribed_today.short_description = 'inscrito hoje?'
-	subscribed_today.boolean = True
+    subscribed_today.short_description = 'inscrito hoje?'
+    subscribed_today.boolean = True
 
-	def mark_as_paid(self, request, queryset):
-		count = queryset.update(paid=True)
-		
-		if count == 1:
-			msg = '{} inscrição foi marcada como paga.'
-		else:
-			msg = '{} inscrições foram marcadas como paga.'
+    def mark_as_paid(self, request, queryset):
+        count = queryset.update(paid=True)
 
-		self.message_user(request, msg.format(count))
+        if count == 1:
+            msg = '{} inscrição foi marcada como paga.'
+        else:
+            msg = '{} inscrições foram marcadas como pagas.'
 
-	mark_as_paid.short_description = 'Marcar como pago'
+        self.message_user(request, msg.format(count))
+
+    mark_as_paid.short_description = 'Marcar como pago'
 
 
 admin.site.register(Subscription, SubscriptionModelAdmin)
-admin.site.site_header = 'Eventex'
-
